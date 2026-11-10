@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#000000">
+<title>TikTok TV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+<!-- ===== Splash ===== -->
+<div id="splash" class="splash">
+  <div class="splash-logo">
+    <span class="note">♪</span>
+    <h1>TikTok <em>TV</em></h1>
+  </div>
+  <div class="splash-status" id="splashStatus">جاري تحميل الاكسبلور…</div>
+  <div class="splash-bar"><i></i></div>
+</div>
+
+<!-- ===== Player Layer ===== -->
+<div id="playerLayer" class="player-layer hidden">
+  <video id="videoA" class="video-el" playsinline webkit-playsinline></video>
+  <video id="videoB" class="video-el" playsinline webkit-playsinline></video>
+
+  <!-- Poster while resolving -->
+  <div id="posterLayer" class="poster-layer hidden">
+    <img id="posterImg" alt="">
+    <div class="poster-spin"></div>
+  </div>
+
+  <!-- Info overlay -->
+  <div id="infoOverlay" class="info-overlay">
+    <div class="info-top">
+      <div class="brand">TikTok <em>TV</em></div>
+      <div class="feed-name" id="feedName"></div>
+      <div class="counter" id="counter"></div>
+    </div>
+    <div class="info-side">
+      <div class="author-chip" id="authorChip">
+        <img id="authorAvatar" alt="">
+        <div class="author-meta">
+          <div class="author-name" id="authorName"></div>
+          <div class="author-stats" id="authorStats"></div>
+        </div>
+      </div>
+      <div class="caption" id="caption"></div>
+      <div class="vstats" id="vstats"></div>
+    </div>
+    <div class="hints" id="hints">
+      <span><b>▲▼</b> قناة</span>
+      <span><b>OK</b> تشغيل/إيقاف</span>
+      <span><b>◀▶</b> ±10ث</span>
+      <span><b>M</b> كتم</span>
+      <span><b>رجوع</b> بحث</span>
+    </div>
+    <div class="seek-wrap" dir="ltr">
+      <div class="seek-bar" id="seekBar"><i id="seekFill"></i></div>
+      <div class="seek-time" id="seekTime">0:00 / 0:00</div>
+    </div>
+  </div>
+
+  <!-- OSD feedback -->
+  <div id="osd" class="osd hidden"></div>
+
+  <!-- Start gate -->
+  <div id="startGate" class="start-gate hidden">
+    <div class="start-ring">▶</div>
+    <div class="start-txt">اضغط <b>OK</b> لبدء المشاهدة</div>
+  </div>
+
+  <!-- Error screen -->
+  <div id="errorScreen" class="error-screen hidden">
+    <div class="err-icon">⚠</div>
+    <div class="err-msg" id="errMsg"></div>
+    <button class="err-btn" id="retryBtn">إعادة المحاولة</button>
+  </div>
+</div>
+
+<!-- ===== Search Overlay ===== -->
+<div id="searchOverlay" class="search-overlay hidden">
+  <div class="search-head">
+    <div class="brand">TikTok <em>TV</em></div>
+    <div class="search-title">ابحث عن قناة أو هاشتاق</div>
+  </div>
+  <div class="search-input-wrap">
+    <span class="at">@</span>
+    <input id="searchInput" type="text" inputmode="text" autocomplete="off"
+           placeholder="اسم المستخدم… مثال: nasa   أو   #ترند" dir="auto">
+  </div>
+  <div class="search-section" id="savedSection">
+    <div class="sec-title">⭐ قنواتي المحفوظة</div>
+    <div class="chips" id="savedChips"></div>
+  </div>
+  <div class="search-section">
+    <div class="sec-title">🔥 هاشتاقات رائجة</div>
+    <div class="chips" id="tagChips"></div>
+  </div>
+  <div class="search-section" id="recentSection">
+    <div class="sec-title">🕘 آخر البحث</div>
+    <div class="chips" id="recentChips"></div>
+  </div>
+  <div class="search-foot">اضغط <b>رجوع</b> للعودة إلى المشاهدة</div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="app.js?v=3"></script>
+</body>
+</html>
